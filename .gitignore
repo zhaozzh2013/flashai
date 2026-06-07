@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.memory.json
+data/
+
+# 调试 / 截图脚本产生的临时文件
+shot_*.png
+ui_screenshot.png
+multi_shot.py
+ui_screenshot.py
+debug_*.py
+test_md.py
