@@ -294,23 +294,9 @@ class SettingsDialog(QtWidgets.QDialog):
         self.setWindowFlags(
             Qt.Dialog | Qt.FramelessWindowHint
         )
-        self.setAttribute(Qt.WA_TranslucentBackground, False)
         self._drag_pos: QtCore.QPoint | None = None
         self._build()
         self._load()
-        # 入场淡入
-        self._fx = QtWidgets.QGraphicsOpacityEffect(self)
-        self._fx.setOpacity(0.0)
-        self.setGraphicsEffect(self._fx)
-        QTimer.singleShot(0, self._animate_in)
-
-    def _animate_in(self) -> None:
-        anim = QPropertyAnimation(self._fx, b"opacity")
-        anim.setDuration(180)
-        anim.setStartValue(0.0)
-        anim.setEndValue(1.0)
-        anim.setEasingCurve(QEasingCurve.OutCubic)
-        anim.start()
 
     # 让标题栏可以拖动
     def mousePressEvent(self, event) -> None:  # noqa: N802
