@@ -1,0 +1,7 @@
+# 强制 LF 行尾,避免 Windows 检出时把脚本搞坏
+*.sh        eol=lf
+*.spec      eol=lf
+*.yml       eol=lf
+*.yaml      eol=lf
+*.md        eol=lf
+*.py        eol=lf
